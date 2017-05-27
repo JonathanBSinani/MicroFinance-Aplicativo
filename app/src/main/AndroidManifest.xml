@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.a11group.app_micro_finance_v1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_micro_finance"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Activity.Splash_Screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.CriarConta"
+            android:label="@string/title_activity_criar_conta"
+            android:parentActivityName=".Activity.Login"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.a11group.app_micro_finance_v1.Activity.Login" />
+        </activity>
+        <activity
+            android:name=".Activity.NovaDespesa"
+            android:label="@string/title_activity_nova_despesa"
+            android:parentActivityName=".Activity.TelaPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.a11group.app_micro_finance_v1.Activity.TelaPrincipal" />
+        </activity>
+        <activity
+            android:name=".Activity.TelaPrincipal"
+            android:label="@string/title_activity_tela_principal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.NovaReceita"
+            android:label="@string/title_activity_nova_receita"
+            android:parentActivityName=".Activity.TelaPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.a11group.app_micro_finance_v1.Activity.TelaPrincipal" />
+        </activity>
+    </application>
+
+</manifest>
