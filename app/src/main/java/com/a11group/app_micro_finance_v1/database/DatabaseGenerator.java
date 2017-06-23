@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Database;
+package com.a11group.app_micro_finance_v1.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * esta classe cria somente o banco de dados
  */
 
-public class criaSQLite extends SQLiteOpenHelper {
+public class DatabaseGenerator extends SQLiteOpenHelper {
 
     public static final String NOME_BANCO = "bancoInterno.db";
     public static final String RECEITA = "receita";
@@ -19,7 +19,7 @@ public class criaSQLite extends SQLiteOpenHelper {
     public static final String DATA_REC = "editora";
     public static final int VERSAO = 1;
 
-    public criaSQLite(Context context){
+    public DatabaseGenerator(Context context){
         super(context, NOME_BANCO, null, VERSAO);
     }
 

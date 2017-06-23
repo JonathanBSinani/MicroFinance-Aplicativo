@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Activity;
+package com.a11group.app_micro_finance_v1.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,8 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.a11group.app_micro_finance_v1.R;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -22,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class NovaDespesa extends AppCompatActivity
+public class NewIncomeActivity extends AppCompatActivity
         implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, DialogInterface.OnCancelListener{
 
     private int year, month, day, hour, minute;
@@ -31,22 +29,23 @@ public class NovaDespesa extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nova_despesa);
+        setContentView(R.layout.activity_nova_receita);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        txtData = (EditText) findViewById(R.id.edtData_Despesa);
+        txtData = (EditText) findViewById(R.id.edtData);
         String currentDateTimeString = null;
         currentDateTimeString = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
         txtData.setText(currentDateTimeString);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_nova_despesa, menu);
-
+        inflater.inflate(R.menu.menu_nova_receita, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -55,10 +54,10 @@ public class NovaDespesa extends AppCompatActivity
         switch (item.getItemId())
         {
             //salva os registros
-            case R.id.salvar_despesa:
+            case R.id.salvar_registro:
                 break;
-            case R.id.cancelar_despesa:
-                AlertDialog.Builder builder = new AlertDialog.Builder(NovaDespesa.this);
+            case R.id.cancelar_registro:
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewIncomeActivity.this);
                 builder
                         .setIcon(R.mipmap.ic_alert_warning)
                         .setTitle("Aviso")
@@ -134,6 +133,6 @@ public class NovaDespesa extends AppCompatActivity
         day = dayOfMonth;
 
         txtData.setText((day < 10 ? "0" + day : day)+"/" +
-                (month+1 < 10 ? "0"+(month + 1) : (month + 1))+ "/" + year);
+                        (month+1 < 10 ? "0"+(month + 1) : (month + 1))+ "/" + year);
     }
 }

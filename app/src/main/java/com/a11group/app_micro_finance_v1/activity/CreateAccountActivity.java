@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Activity;
+package com.a11group.app_micro_finance_v1.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,9 +16,9 @@ import android.widget.Toast;
 
 import com.a11group.app_micro_finance_v1.R;
 
-public class CriarConta extends AppCompatActivity {
+public class CreateAccountActivity extends AppCompatActivity {
 
-    private static final String TAG = "CriarConta";
+    private static final String TAG = "CreateAccountActivity";
 
     private EditText txtnome;
     private EditText txtemail;
@@ -49,7 +49,7 @@ public class CriarConta extends AppCompatActivity {
         conta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tela_login = new Intent(getApplicationContext(), Login.class);
+                Intent tela_login = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(tela_login);
             }
         });
@@ -72,7 +72,7 @@ public class CriarConta extends AppCompatActivity {
 
         btnInscreve.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(CriarConta.this);
+        final ProgressDialog progressDialog = new ProgressDialog(CreateAccountActivity.this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setIndeterminate(true);
         progressDialog.setProgress(0);

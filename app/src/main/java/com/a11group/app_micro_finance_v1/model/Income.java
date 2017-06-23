@@ -1,10 +1,10 @@
-package com.a11group.app_micro_finance_v1.Model;
+package com.a11group.app_micro_finance_v1.model;
 
 /**
  * Created by Jonathan on 25/05/2017.
  */
 
-public class ReceitaModel {
+public class Income {
 
     private Integer codigo;
     private String  descricaoReceita;

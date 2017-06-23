@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Database;
+package com.a11group.app_micro_finance_v1.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,13 +11,13 @@ import android.database.Cursor;
  * A classe BancoController será responsável por controlar as manipulações ao banco
  */
 
-public class bancoController {
+public class DatabaseManager {
 
     private SQLiteDatabase db;
-    private criaSQLite banco;
+    private DatabaseGenerator banco;
 
-    public bancoController(Context context){
-        banco = new criaSQLite(context);
+    public DatabaseManager(Context context){
+        banco = new DatabaseGenerator(context);
     }
 
     public String insereDado(String descricao, String tipo, String data_rec){
@@ -26,11 +26,11 @@ public class bancoController {
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(criaSQLite.DESCRICAO, descricao);
-        valores.put(criaSQLite.TIPO, tipo);
-        valores.put(criaSQLite.DATA_REC, data_rec);
+        valores.put(DatabaseGenerator.DESCRICAO, descricao);
+        valores.put(DatabaseGenerator.TIPO, tipo);
+        valores.put(DatabaseGenerator.DATA_REC, data_rec);
 
-        resultado = db.insert(criaSQLite.RECEITA, null, valores);
+        resultado = db.insert(DatabaseGenerator.RECEITA, null, valores);
         db.close();
 
         if (resultado == 1)

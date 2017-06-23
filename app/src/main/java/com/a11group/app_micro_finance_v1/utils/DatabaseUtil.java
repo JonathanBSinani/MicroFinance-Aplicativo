@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Uteis;
+package com.a11group.app_micro_finance_v1.utils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

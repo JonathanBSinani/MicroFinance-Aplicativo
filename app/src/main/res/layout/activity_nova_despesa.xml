@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.a11group.app_micro_finance_v1.Activity.NovaReceita"
+    tools:context="com.a11group.app_micro_finance_v1.activity.NewIncomeActivity"
     android:background="#023e68">
 
     <android.support.design.widget.AppBarLayout
