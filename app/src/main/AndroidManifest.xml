@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.a11group.app_micro_finance_v1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_micro_finance"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Activity.Splash_Screen">
+        <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,39 +18,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.Login"
+            android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activity.CriarConta"
+            android:name=".activity.CreateAccountActivity"
             android:label="@string/title_activity_criar_conta"
-            android:parentActivityName=".Activity.Login"
+            android:parentActivityName=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.a11group.app_micro_finance_v1.Activity.Login" />
+                android:value="com.a11group.app_micro_finance_v1.activity.LoginActivity" />
         </activity>
         <activity
-            android:name=".Activity.NovaDespesa"
+            android:name=".activity.NewExpensesActivity"
             android:label="@string/title_activity_nova_despesa"
-            android:parentActivityName=".Activity.TelaPrincipal"
+            android:parentActivityName=".activity.HomeScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.a11group.app_micro_finance_v1.Activity.TelaPrincipal" />
+                android:value="com.a11group.app_micro_finance_v1.activity.HomeScreenActivity" />
         </activity>
         <activity
-            android:name=".Activity.TelaPrincipal"
+            android:name=".activity.HomeScreenActivity"
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activity.NovaReceita"
+            android:name=".activity.NewIncomeActivity"
             android:label="@string/title_activity_nova_receita"
-            android:parentActivityName=".Activity.TelaPrincipal"
+            android:parentActivityName=".activity.HomeScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.a11group.app_micro_finance_v1.Activity.TelaPrincipal" />
+                android:value="com.a11group.app_micro_finance_v1.activity.HomeScreenActivity" />
         </activity>
     </application>
 

@@ -1,38 +1,26 @@
-package com.a11group.app_micro_finance_v1.Activity;
+package com.a11group.app_micro_finance_v1.activity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.InstrumentationInfo;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.a11group.app_micro_finance_v1.Database.bancoController;
 import com.a11group.app_micro_finance_v1.R;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
-public class NovaReceita extends AppCompatActivity
+public class NewExpensesActivity extends AppCompatActivity
         implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, DialogInterface.OnCancelListener{
 
     private int year, month, day, hour, minute;
@@ -41,23 +29,22 @@ public class NovaReceita extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nova_receita);
+        setContentView(R.layout.activity_nova_despesa);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        txtData = (EditText) findViewById(R.id.edtData);
+        txtData = (EditText) findViewById(R.id.edtData_Despesa);
         String currentDateTimeString = null;
         currentDateTimeString = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
         txtData.setText(currentDateTimeString);
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_nova_receita, menu);
+        inflater.inflate(R.menu.menu_nova_despesa, menu);
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -66,10 +53,10 @@ public class NovaReceita extends AppCompatActivity
         switch (item.getItemId())
         {
             //salva os registros
-            case R.id.salvar_registro:
+            case R.id.salvar_despesa:
                 break;
-            case R.id.cancelar_registro:
-                AlertDialog.Builder builder = new AlertDialog.Builder(NovaReceita.this);
+            case R.id.cancelar_despesa:
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewExpensesActivity.this);
                 builder
                         .setIcon(R.mipmap.ic_alert_warning)
                         .setTitle("Aviso")
@@ -145,6 +132,6 @@ public class NovaReceita extends AppCompatActivity
         day = dayOfMonth;
 
         txtData.setText((day < 10 ? "0" + day : day)+"/" +
-                        (month+1 < 10 ? "0"+(month + 1) : (month + 1))+ "/" + year);
+                (month+1 < 10 ? "0"+(month + 1) : (month + 1))+ "/" + year);
     }
 }

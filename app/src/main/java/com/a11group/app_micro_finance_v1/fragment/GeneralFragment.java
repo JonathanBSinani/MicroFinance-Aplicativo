@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Fragments;
+package com.a11group.app_micro_finance_v1.fragment;
 
 
 import android.content.Intent;
@@ -10,28 +10,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.a11group.app_micro_finance_v1.Activity.NovaDespesa;
-import com.a11group.app_micro_finance_v1.Activity.NovaReceita;
+import com.a11group.app_micro_finance_v1.activity.NewExpensesActivity;
+import com.a11group.app_micro_finance_v1.activity.NewIncomeActivity;
 import com.a11group.app_micro_finance_v1.R;
 import com.github.clans.fab.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Geral_Fragment extends Fragment {
+public class GeneralFragment extends Fragment {
 
 
     private FloatingActionButton menu_fab_receita;
     private FloatingActionButton menu_fab_despesa;
 
-    public Geral_Fragment() {
+    public GeneralFragment() {
         // Required empty public constructor
     }
 
     //cria uma nova instância do fragmento
-    public static Geral_Fragment newInstance(){
+    public static GeneralFragment newInstance(){
         Bundle args = new Bundle();
-        Geral_Fragment fragment = new Geral_Fragment();
+        GeneralFragment fragment = new GeneralFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +51,7 @@ public class Geral_Fragment extends Fragment {
             public void onClick(View view) {
                 /*Snackbar.make(view, "Adicionar nova Receita/Despesa", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent tela_receita_nova = new Intent(getContext(), NovaReceita.class);
+                Intent tela_receita_nova = new Intent(getContext(), NewIncomeActivity.class);
                 startActivity(tela_receita_nova);
             }
         });
@@ -59,7 +59,7 @@ public class Geral_Fragment extends Fragment {
         menu_fab_despesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tela_despesa_nova = new Intent(getContext(), NovaDespesa.class);
+                Intent tela_despesa_nova = new Intent(getContext(), NewExpensesActivity.class);
                 startActivity(tela_despesa_nova);
             }
         });

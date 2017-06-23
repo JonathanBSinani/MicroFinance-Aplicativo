@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.a11group.app_micro_finance_v1.Activity.TelaPrincipal">
+    tools:context="com.a11group.app_micro_finance_v1.activity.HomeScreenActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

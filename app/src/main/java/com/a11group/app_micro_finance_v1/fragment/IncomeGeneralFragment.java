@@ -1,4 +1,4 @@
-package com.a11group.app_micro_finance_v1.Fragments;
+package com.a11group.app_micro_finance_v1.fragment;
 
 
 import android.os.Bundle;
@@ -14,18 +14,18 @@ import com.a11group.app_micro_finance_v1.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Geral_Receitas_Fragment extends Fragment {
+public class IncomeGeneralFragment extends Fragment {
 
     ListView listReceitas;
 
-    public Geral_Receitas_Fragment() {
+    public IncomeGeneralFragment() {
         // Required empty public constructor
     }
 
     //cria uma nova instância do fragmento
-    public static Geral_Receitas_Fragment newInstance(){
+    public static IncomeGeneralFragment newInstance(){
         Bundle args = new Bundle();
-        Geral_Receitas_Fragment fragment = new Geral_Receitas_Fragment();
+        IncomeGeneralFragment fragment = new IncomeGeneralFragment();
         fragment.setArguments(args);
         return fragment;
     }

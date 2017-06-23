@@ -3,7 +3,7 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.a11group.app_micro_finance_v1.Fragments.Geral_Fragment"
+    tools:context="com.a11group.app_micro_finance_v1.fragment.GeneralFragment"
     android:background="#efeded">
 
     <!-- TODO: Update blank fragment layout -->

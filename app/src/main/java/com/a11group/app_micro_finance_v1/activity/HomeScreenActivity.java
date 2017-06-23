@@ -1,14 +1,7 @@
-package com.a11group.app_micro_finance_v1.Activity;
+package com.a11group.app_micro_finance_v1.activity;
 
-import android.app.ActivityOptions;
-import android.app.Dialog;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.transition.Explode;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,12 +13,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.a11group.app_micro_finance_v1.Fragments.Geral_Receitas_Fragment;
-import com.a11group.app_micro_finance_v1.Fragments.Geral_Fragment;
+import com.a11group.app_micro_finance_v1.fragment.IncomeGeneralFragment;
+import com.a11group.app_micro_finance_v1.fragment.GeneralFragment;
 import com.a11group.app_micro_finance_v1.R;
-import com.github.clans.fab.FloatingActionButton;
 
-public class TelaPrincipal extends AppCompatActivity
+public class HomeScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     //variáveis de instância
@@ -46,7 +38,7 @@ public class TelaPrincipal extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //inicia o fragmento "Geral" na tela inicial
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame, Geral_Fragment.newInstance(),"Geral").commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, GeneralFragment.newInstance(),"Geral").commit();
 
         /*menu_fab_receita = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.menu_receita);
         menu_fab_despesa = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.menu_despesa);*/
@@ -57,7 +49,7 @@ public class TelaPrincipal extends AppCompatActivity
             public void onClick(View view) {
                 //Snackbar.make(view, "Adicionar nova Receita/Despesa", Snackbar.LENGTH_LONG)
                   //      .setAction("Action", null).show();
-                Intent tela_receita_nova = new Intent(getApplicationContext(), NovaReceita.class);
+                Intent tela_receita_nova = new Intent(getApplicationContext(), NewIncomeActivity.class);
                 startActivity(tela_receita_nova);
             }
         });
@@ -65,7 +57,7 @@ public class TelaPrincipal extends AppCompatActivity
         menu_fab_despesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tela_despesa_nova = new Intent(getApplicationContext(), NovaDespesa.class);
+                Intent tela_despesa_nova = new Intent(getApplicationContext(), NewExpensesActivity.class);
                 startActivity(tela_despesa_nova);
             }
         });*/
@@ -126,15 +118,15 @@ public class TelaPrincipal extends AppCompatActivity
         Limpar();
 
         if (id == R.id.nav_geral){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, Geral_Fragment.newInstance(), "Geral").commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, GeneralFragment.newInstance(), "Geral").commit();
             toolbar.setSubtitle("Geral");
             retorno = true;
         }else if (id == R.id.nav_receitas){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, Geral_Receitas_Fragment.newInstance(),"Receitas").commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, IncomeGeneralFragment.newInstance(),"Receitas").commit();
             toolbar.setSubtitle("Receitas");
             retorno = true;
         }else if (id == R.id.nav_despesas){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, Geral_Receitas_Fragment.newInstance(),"Despesas").commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, IncomeGeneralFragment.newInstance(),"Despesas").commit();
             toolbar.setSubtitle("Despesas");
             retorno = true;
         }
